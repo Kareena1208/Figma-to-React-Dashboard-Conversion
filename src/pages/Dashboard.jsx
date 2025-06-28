@@ -1,9 +1,12 @@
 import React from 'react'
+import Cards from '../components/dashboard/Cards'
+import DashboardHeader from '../components/dashboard/DashboardHeader'
 
 const Dashboard = () => {
   return (
     <div className="p-[24px]">
-      <h1 className='text-red-500'>Home hmjkls</h1>
+      <DashboardHeader />
+      <Cards />
     </div>
   )
 }
