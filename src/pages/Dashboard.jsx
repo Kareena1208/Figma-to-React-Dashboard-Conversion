@@ -6,6 +6,7 @@ import EmployeeProgress from "../components/dashboard/EmployeeProgress";
 import PersonalNotepad from "../components/dashboard/PersonalNotepad";
 import OverDueTask from "../components/dashboard/OverDueTask";
 import WorkFlow from "../components/dashboard/WorkFlow";
+import Graph from "../components/dashboard/Graph";
 
 const Dashboard = () => {
   return (
@@ -16,7 +17,7 @@ const Dashboard = () => {
       <EmployeeProgress />
       <div className="pt-[24px] flex flex-col md:flex-row gap-[24px]">
         <PersonalNotepad />
-        <div>graph</div>
+        <Graph />
       </div> <div className="pt-[24px] flex flex-col md:flex-row gap-[24px]">
         <OverDueTask />
         <WorkFlow />
