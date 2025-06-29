@@ -2,8 +2,8 @@ import React from "react";
 
 const Cards = () => {
   return (
-    <div className="flex gap-[24px]">
-      <div className="border border-[#EBEBEB] rounded-xl p-[16px]">
+    <div className="overflow-x-auto flex gap-[24px] whitespace-nowrap scrollbar-hide">
+      <div className="border border-[#EBEBEB] rounded-xl p-[16px] inline-block">
         <div className="flex gap-[12px] items-center mb-[12px]">
           <div className="bg-[#008745] rounded-lg p-[6px]">
             <img
@@ -37,7 +37,7 @@ const Cards = () => {
           </div>
         </div>
       </div>
-      <div className="border border-[#EBEBEB] rounded-xl p-[16px]">
+      <div className="border border-[#EBEBEB] rounded-xl p-[16px] inline-block">
         <div className="flex gap-[12px] items-center mb-[12px]">
           <div className="bg-[#D8E6FB] rounded-lg p-[6px]">
             <img
@@ -75,7 +75,7 @@ const Cards = () => {
           </div>
         </div>
       </div>
-      <div className="border border-[#EBEBEB] rounded-xl p-[16px]">
+      <div className="border border-[#EBEBEB] rounded-xl p-[16px] inline-block">
         <div className="flex gap-[12px] items-center mb-[12px]">
           <div className="bg-[#F8EEE6] rounded-lg p-[6px]">
             <img
@@ -107,7 +107,7 @@ const Cards = () => {
           </div>
         </div>
       </div>
-      <div className="border border-[#EBEBEB] rounded-xl p-[16px]">
+      <div className="border border-[#EBEBEB] rounded-xl p-[16px] inline-block">
         <div className="flex gap-[12px] items-center mb-[12px]">
           <div className="bg-[#F7EDFF] rounded-lg p-[6px]">
             <img

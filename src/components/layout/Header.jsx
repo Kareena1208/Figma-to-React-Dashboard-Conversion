@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import useDeviceDetect from "../../helpers/screens";
 
 const Header = () => {
   const navigate = useNavigate();
+  const { isMobile } = useDeviceDetect();
 
   const [showCalendar, setShowCalendar] = useState(false);
   const [showOutletDropdown, setShowOutletDropdown] = useState(false);
-  const currentDate = new Date("2025-06-28T14:23:00+05:30"); // 02:23 PM IST, June 28, 2025
+
+  const currentDate = new Date("2025-06-28T14:23:00+05:30");
   const days = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
   const outlets = ["Outlet name", "Outlet 1", "Outlet 2", "Outlet 3"];
 
@@ -87,29 +90,41 @@ const Header = () => {
         />
       </div>
 
-      <div className="pl-[24px] flex justify-between items-center flex-1">
-        <div className="flex gap-1 items-center">
+      <div className="pl-[12px] md:pl-[24px] flex justify-between items-center flex-1">
+        <div className="flex gap-1 items-center pr-[6px] md:pr-[0px]">
           <img
             src="../assets/icons/home.svg"
             onClick={() => navigate("/")}
             alt="Home"
-            className="w-[16px] h-[16px]"
+            className="min-w-[16px] min-h-[16px] cursor-pointer"
           />
-          <span className="text-primary text-xs"> Home</span>
+          {!isMobile && <span className="text-primary text-xs"> Home</span>}
         </div>
-        <div className="flex items-center gap-[12px] mt-4 md:mt-0">
+        <div className="flex items-center gap-[6px] md:gap-[12px] ">
           <div className=" hover:bg-gray-100 p-2 rounded cursor-pointer">
-            <img src="/assets/icons/AutoReview.svg" alt="Auto Review" className="w-[16px] h-[16px]"/>
+            <img
+              src="/assets/icons/AutoReview.svg"
+              alt="Auto Review"
+              className="min-w-[16px] min-h-[16px]"
+            />
           </div>
           <div className=" hover:bg-gray-100 p-2 rounded cursor-pointer">
-            <img src="/assets/icons/bell.svg" alt="notification" className="w-[16px] h-[16px]" />
+            <img
+              src="/assets/icons/bell.svg"
+              alt="notification"
+              className="min-w-[16px] min-h-[16px]"
+            />
           </div>
           <div className="relative">
             <button
-              className="w-[141px] bg-[#F2F4F6] py-[8.5px] px-[16px] rounded-lg flex items-center border border-[#F2F4F6] hover:border-gray-300 justify-between"
+              className={`${
+                isMobile ? "w-[46px] " : "w-[141px] "
+              } bg-[#F2F4F6] py-[8.5px] px-[16px] rounded-lg flex items-center border border-[#F2F4F6] hover:border-gray-300 justify-between`}
               onClick={() => setShowCalendar(!showCalendar)}
             >
-              <span className="text-xs text-primary">24-03-2001</span>
+              {!isMobile && (
+                <span className="text-xs text-primary">24-03-2001</span>
+              )}
               <img
                 src="/assets/icons/calendar-dotted.svg"
                 alt="calendar"
@@ -124,14 +139,23 @@ const Header = () => {
           </div>
           <div className="relative">
             <button
-              className="w-[166px] bg-[#F2F4F6] py-[6.5px] px-[16px] rounded-lg flex items-center border border-[#F2F4F6] hover:border-gray-300 justify-between"
+              className={`${
+                isMobile ? "w-[48px]" : "w-[166px]"
+              }  bg-[#F2F4F6] py-[6.5px] px-[16px] rounded-lg flex items-center border border-[#F2F4F6] hover:border-gray-300 justify-between h-[32px]`}
               onClick={() => setShowOutletDropdown(!showOutletDropdown)}
             >
               <div className="flex items-center">
-                <img src="../assets/icons/building.svg" alt="outlet" className="w-[13px] h-[13px]" />
-                <span className="ml-2 text-sm text-primary">Outlet name</span>
+                <img
+                  src="../assets/icons/building.svg"
+                  alt="outlet"
+                  className="w-[13px] h-[13px]"
+                />
+                {!isMobile && (
+                  <span className="ml-2 text-sm text-primary">Outlet name</span>
+                )}
               </div>
-              <img src="/assets/icons/chevron-down.svg" alt="outlet" />
+              {!isMobile && (
+                <img src="/assets/icons/chevron-down.svg" alt="outlet" />)}
             </button>
             {showOutletDropdown && renderOutletDropdown()}
           </div>
@@ -139,7 +163,12 @@ const Header = () => {
           <div className="border border-[#EBEBEB] h-[32px] rounded"></div>
 
           <button className="bg-[#008745] text-white rounded-lg px-[14px] py-[6px] hover:bg-green-700 transition text-xs font-medium flex gap-[4px] h-[32px] items-center">
-            <img src="/assets/icons/plus.svg" alt="plus" /> Create
+            <img
+              src="/assets/icons/plus.svg"
+              alt="plus"
+              className="min-h-[10px] min-w-[10px]"
+            />
+            {!isMobile && "Create"}
           </button>
         </div>
       </div>
