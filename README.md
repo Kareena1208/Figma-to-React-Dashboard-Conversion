@@ -30,6 +30,3 @@ Breakdown:
     Setup and configuration: 1 hours.
     Coding and implementation: 8 to 9 hours.
 
-## AI Tools Used (Optional)
-
-Grok 3
