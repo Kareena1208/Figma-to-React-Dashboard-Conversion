@@ -40,9 +40,9 @@ const EmployeeProgress = () => {
   return (
     <div className="bg-white rounded-lg border border-[#EBEBEB] mt-[24px]">
       <div className="p-[12px] pb-[0px]">
-        <div className="flex justify-between items-center mb-[4px]">
+        <div className="flex flex-col md:flex-row justify-between md:items-center mb-[4px]">
           <h2 className="text-sm font-semibold text-primary">Employee wise progress</h2>
-          <div className="flex gap-[12px] items-center">
+          <div className="flex gap-[12px] items-center pt-[8px] md:pt-0">
             <div className="relative">
               <button
                 className={`w-[166px] bg-[#F2F4F6] py-[8.5px] px-[12px] rounded-lg flex items-center border border-[#F2F4F6] hover:border-gray-300 justify-between h-[32px]`}
