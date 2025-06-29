@@ -38,7 +38,7 @@ const EmployeeProgress = () => {
   };
 
   return (
-    <div className="bg-white rounded-lg shadow mt-[24px]">
+    <div className="bg-white rounded-lg border border-[#EBEBEB] mt-[24px]">
       <div className="p-[12px] pb-[0px]">
         <div className="flex justify-between items-center mb-[4px]">
           <h2 className="text-sm font-semibold text-primary">Employee wise progress</h2>
