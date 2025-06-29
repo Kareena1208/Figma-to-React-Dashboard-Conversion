@@ -16,9 +16,8 @@ You may also see any lint errors in the console.
 
 ## Tools Used
 
-Node.js: Runtime environment for JavaScript.
 React.js
-npm: Package manager for Node.js (v7.0.0 or higher).
+npm: Package manager for Node.js
 VS Code: Code editor for development.
 Git: Version control system.
 
