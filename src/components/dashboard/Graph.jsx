@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import BarChart from "./BarChart";
+
 const Graph = () => {
   const [activeTab, setActiveTab] = useState("Tasks");
 
@@ -14,9 +16,8 @@ const Graph = () => {
       <div className="p-[12px] pb-[0px]">
         <div className="flex justify-between items-center mb-[4px]">
           <h2 className="text-sm font-semibold text-primary">
-          Department wise allocation
+            Department wise allocation
           </h2>
-
           <img
             src="/assets/icons/dots.svg"
             alt="dots"
@@ -47,7 +48,7 @@ const Graph = () => {
         </div>
       </div>
       <div className="border-b border-[#EBEBEB]"></div>
-      <div className="h-[212px] overflow-y-auto">graph here</div>
+      <BarChart activeTab={activeTab} />
     </div>
   );
 };
